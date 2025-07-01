@@ -7,9 +7,9 @@ import { Button } from '@/components/ui/button';
 const navItems = [
   { path: '/', label: 'Anasayfa' },
   { path: '/services', label: 'Hizmetler' },
-  { path: '/booking', label: 'Randevu' },
+
   { path: '/about', label: 'Hakkımızda' },
-  { path: '/contact', label: 'İletişim' },
+  // { path: '/contact', label: 'İletişim' },
 ];
 
 export default function Header() {
@@ -41,7 +41,7 @@ export default function Header() {
               </Link>
             ))}
             <Button asChild className="bg-rose-500 hover:bg-rose-600 text-white">
-              <Link to="/booking">Randevu Al</Link>
+              <Link to="/contact">İletişim</Link>
             </Button>
           </nav>
 
@@ -80,8 +80,8 @@ export default function Header() {
                 </Link>
               ))}
               <Button asChild className="bg-rose-500 hover:bg-rose-600 text-white w-fit">
-                <Link to="/booking" onClick={() => setIsOpen(false)}>
-                  Randevu Al
+                <Link to="/contact" onClick={() => setIsOpen(false)}>
+                  İletişim
                 </Link>
               </Button>
             </nav>

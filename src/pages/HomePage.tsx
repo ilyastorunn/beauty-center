@@ -143,9 +143,9 @@ export default function HomePage() {
                 size="lg"
                 className="bg-rose-500 hover:bg-rose-600 text-white px-10 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               >
-                <Link to="/booking">
+                <Link to="/contact">
                   <Calendar className="mr-3 h-6 w-6" />
-                  Randevu Al
+                  İletişime Geçin
                 </Link>
               </Button>
               <Button
@@ -248,7 +248,7 @@ export default function HomePage() {
               asChild
               variant="outline"
               size="lg"
-              className="border-rose-500 text-rose-500 hover:bg-rose-50"
+              className="border-rose-500 text-rose-500 hover:bg-rose-50 hover:text-rose-600"
             >
               <Link to="/services">Hizmetleri Görüntüle</Link>
             </Button>
@@ -339,9 +339,9 @@ export default function HomePage() {
               size="lg"
               className="bg-white text-rose-500 hover:bg-gray-100 px-8 py-3 text-lg"
             >
-              <Link to="/booking">
+              <Link to="/contact">
                 <Calendar className="mr-2 h-5 w-5" />
-                Book Your Appointment
+                Bizimle İletişime Geçin
               </Link>
             </Button>
           </motion.div>

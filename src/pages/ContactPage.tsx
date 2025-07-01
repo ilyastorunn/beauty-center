@@ -1,75 +1,86 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { toast } from 'sonner';
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter, MessageCircle } from 'lucide-react';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Instagram,
+  Facebook,
+  Twitter,
+  MessageCircle,
+} from "lucide-react";
 
 const contactInfo = [
   {
     icon: <MapPin className="h-5 w-5" />,
-    title: 'Visit Us',
-    details: ['123 Beauty Street', 'New York, NY 10001'],
-    action: 'Get Directions'
+    title: "Bizi Ziyaret Edin",
+    details: ["Esmira Plaza", "Selçuklu, Konya"],
+    action: "Yol tarifi alın",
   },
   {
     icon: <Phone className="h-5 w-5" />,
-    title: 'Call Us',
-    details: ['(555) 123-4567', 'Monday - Saturday'],
-    action: 'Call Now'
+    title: "Bizi Arayın",
+    details: ["(507) 404-6079", "Pazartesi - Cumartesi"],
+    action: "Bizi Arayın",
   },
   {
     icon: <Mail className="h-5 w-5" />,
-    title: 'Email Us',
-    details: ['info@bellabeauty.com', 'We reply within 24 hours'],
-    action: 'Send Email'
+    title: "Bize Email Gönderin",
+    details: ["info@bellabeauty.com", "We reply within 24 hours"],
+    action: "Email Gönder",
   },
   {
     icon: <MessageCircle className="h-5 w-5" />,
-    title: 'WhatsApp',
-    details: ['(555) 123-4567', 'Instant messaging'],
-    action: 'Message Us'
+    title: "WhatsApp",
+    details: ["(507) 404-6079", "Instant messaging"],
+    action: "Mesaj Gönder",
   },
 ];
 
 const businessHours = [
-  { day: 'Monday', hours: '9:00 AM - 7:00 PM' },
-  { day: 'Tuesday', hours: '9:00 AM - 7:00 PM' },
-  { day: 'Wednesday', hours: '9:00 AM - 7:00 PM' },
-  { day: 'Thursday', hours: '9:00 AM - 8:00 PM' },
-  { day: 'Friday', hours: '9:00 AM - 8:00 PM' },
-  { day: 'Saturday', hours: '8:00 AM - 6:00 PM' },
-  { day: 'Sunday', hours: 'Closed' },
+  { day: "Pazartesi", hours: "9:00 - 18:00" },
+  { day: "Salı", hours: "9:00 - 18:00" },
+  { day: "Çarşamba", hours: "9:00 - 18:00" },
+  { day: "Perşembe", hours: "9:00 - 18:00" },
+  { day: "Cuma", hours: "9:00 - 18:00" },
+  { day: "Cumartesi", hours: "8:00 - 18:00" },
+  { day: "Pazar", hours: "Kapalı" },
 ];
 
 const socialLinks = [
-  { icon: <Instagram className="h-5 w-5" />, name: 'Instagram', url: '#' },
-  { icon: <Facebook className="h-5 w-5" />, name: 'Facebook', url: '#' },
-  { icon: <Twitter className="h-5 w-5" />, name: 'Twitter', url: '#' },
+  { icon: <Instagram className="h-5 w-5" />, name: "Instagram", url: "#" },
+  { icon: <Facebook className="h-5 w-5" />, name: "Facebook", url: "#" },
+  { icon: <Twitter className="h-5 w-5" />, name: "Twitter", url: "#" },
 ];
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Message sent successfully! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    toast.success("Message sent successfully! We will get back to you soon.");
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -88,7 +99,8 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We'd love to hear from you. Get in touch with us for appointments, questions, or just to say hello.
+              We'd love to hear from you. Get in touch with us for appointments,
+              questions, or just to say hello.
             </p>
           </motion.div>
         </div>
@@ -112,16 +124,18 @@ export default function ContactPage() {
                         {info.icon}
                       </div>
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
+                    <h3 className="font-semibold text-gray-900 mb-2">
+                      {info.title}
+                    </h3>
                     <div className="space-y-1 text-sm text-gray-600 mb-4">
                       {info.details.map((detail, idx) => (
                         <p key={idx}>{detail}</p>
                       ))}
                     </div>
-                    <Button 
-                      variant="outline" 
+                    <Button
+                      variant="outline"
                       size="sm"
-                      className="border-rose-500 text-rose-500 hover:bg-rose-50"
+                      className="border-rose-500 text-rose-500 hover:bg-rose-50  hover:text-rose-500"
                     >
                       {info.action}
                     </Button>
@@ -145,13 +159,13 @@ export default function ContactPage() {
             >
               <Card>
                 <CardHeader>
-                  <CardTitle>Send us a Message</CardTitle>
+                  <CardTitle>Bizimle İletişime Geç</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="name">Full Name *</Label>
+                        <Label htmlFor="name">Ad Soyad *</Label>
                         <Input
                           id="name"
                           name="name"
@@ -163,7 +177,7 @@ export default function ContactPage() {
                         />
                       </div>
                       <div>
-                        <Label htmlFor="email">Email Address *</Label>
+                        <Label htmlFor="email">E-Posta Adresi *</Label>
                         <Input
                           id="email"
                           name="email"
@@ -177,7 +191,7 @@ export default function ContactPage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="phone">Phone Number</Label>
+                        <Label htmlFor="phone">Telefon Numarası</Label>
                         <Input
                           id="phone"
                           name="phone"
@@ -188,7 +202,7 @@ export default function ContactPage() {
                         />
                       </div>
                       <div>
-                        <Label htmlFor="subject">Subject *</Label>
+                        <Label htmlFor="subject">Konu *</Label>
                         <Input
                           id="subject"
                           name="subject"
@@ -201,7 +215,7 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div>
-                      <Label htmlFor="message">Message *</Label>
+                      <Label htmlFor="message">Mesaj *</Label>
                       <Textarea
                         id="message"
                         name="message"
@@ -212,11 +226,11 @@ export default function ContactPage() {
                         rows={6}
                       />
                     </div>
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       className="w-full bg-rose-500 hover:bg-rose-600 text-white"
                     >
-                      Send Message
+                      Mesaj Gönder
                     </Button>
                   </form>
                 </CardContent>
@@ -235,19 +249,26 @@ export default function ContactPage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Clock className="h-5 w-5 text-rose-500" />
-                    Business Hours
+                    Çalışma Saatleri
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
                     {businessHours.map((schedule, index) => (
-                      <div key={index} className="flex justify-between items-center">
-                        <span className="font-medium text-gray-900">{schedule.day}</span>
-                        <span className={`text-sm ${
-                          schedule.hours === 'Closed' 
-                            ? 'text-gray-400' 
-                            : 'text-gray-600'
-                        }`}>
+                      <div
+                        key={index}
+                        className="flex justify-between items-center"
+                      >
+                        <span className="font-medium text-gray-900">
+                          {schedule.day}
+                        </span>
+                        <span
+                          className={`text-sm ${
+                            schedule.hours === "Closed"
+                              ? "text-gray-400"
+                              : "text-gray-600"
+                          }`}
+                        >
                           {schedule.hours}
                         </span>
                       </div>
@@ -259,7 +280,7 @@ export default function ContactPage() {
               {/* Map */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Find Us</CardTitle>
+                  <CardTitle>Adresimiz</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
@@ -277,7 +298,9 @@ export default function ContactPage() {
                     <div className="flex items-start gap-3">
                       <MapPin className="h-5 w-5 text-rose-500 mt-0.5" />
                       <div>
-                        <p className="font-medium text-gray-900">Bella Beauty</p>
+                        <p className="font-medium text-gray-900">
+                          Nihal Reyyan Güzellik
+                        </p>
                         <p className="text-gray-600">123 Beauty Street</p>
                         <p className="text-gray-600">New York, NY 10001</p>
                       </div>
@@ -292,7 +315,11 @@ export default function ContactPage() {
                   <CardTitle>Follow Us</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex gap-4">
+                  <p className="text-sm text-gray-600 mt-0">
+                    Stay connected with us for beauty tips, <br /> special offers,
+                    and behind-the-scenes content!
+                  </p>
+                  <div className="flex items-center justify-center gap-4 mt-4">
                     {socialLinks.map((social, index) => (
                       <Button
                         key={index}
@@ -307,9 +334,9 @@ export default function ContactPage() {
                       </Button>
                     ))}
                   </div>
-                  <p className="text-sm text-gray-600 mt-4">
+                  {/* <p className="text-sm text-gray-600 mt-4">
                     Stay connected with us for beauty tips, special offers, and behind-the-scenes content!
-                  </p>
+                  </p> */}
                 </CardContent>
               </Card>
             </motion.div>

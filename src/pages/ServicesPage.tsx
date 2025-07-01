@@ -242,7 +242,7 @@ export default function ServicesPage() {
                         asChild 
                         className="w-full bg-rose-500 hover:bg-rose-600 text-white"
                       >
-                        <Link to="/booking" state={{ selectedService: service }}>
+                        <Link to="/contact">
                           Book Now
                         </Link>
                       </Button>
