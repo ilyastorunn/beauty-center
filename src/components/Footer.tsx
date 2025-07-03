@@ -13,11 +13,11 @@ export default function Footer() {
               <span className="text-xl font-bold text-rose-500">Nihal Reyyan Güzellik</span>
             </div>
             <p className="text-gray-600 text-sm">
-              Your premier destination for beauty and wellness treatments. 
-              Experience luxury and excellence in every service.
+              Güzellik ve bakım hizmetlerinde önde gelen adresiniz.
+              Her hizmette lüks ve mükemmelliği deneyimleyin.
             </p>
             <div className="flex items-center justify-center space-x-4">
-              <a href="#" className="text-gray-400 hover:text-rose-500 transition-colors">
+              <a href="https://www.instagram.com/nihalreyyanguzellikestetik/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-rose-500 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-rose-500 transition-colors">
@@ -48,11 +48,6 @@ export default function Footer() {
                   Hakkımızda
                 </Link>
               </li>
-              {/* <li>
-                <Link to="/contact" className="text-gray-600 hover:text-rose-500 transition-colors text-sm">
-                  Contact
-                </Link>
-              </li> */}
             </ul>
           </div>
 
@@ -61,16 +56,16 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-900 mb-4">Hizmetlerimiz</h3>
             <ul className="space-y-2">
               <li>
-                <span className="text-gray-600 text-sm">Facial Treatments</span>
+                <span className="text-gray-600 text-sm">Lazer Epilasyon</span>
               </li>
               <li>
-                <span className="text-gray-600 text-sm">Hair Styling</span>
+                <span className="text-gray-600 text-sm">Cilt Bakımı</span>
               </li>
               <li>
-                <span className="text-gray-600 text-sm">Nail Care</span>
+                <span className="text-gray-600 text-sm">İspanya Işıltısı</span>
               </li>
               <li>
-                <span className="text-gray-600 text-sm">Massage Therapy</span>
+                <span className="text-gray-600 text-sm">Kirpik Lifting</span>
               </li>
             </ul>
           </div>
@@ -82,17 +77,17 @@ export default function Footer() {
               <li className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-rose-500 mt-0.5" />
                 <span className="text-gray-600 text-sm">
-                  123 Beauty Street<br />
-                  New York, NY 10001
+                  Esmira Plaza<br />
+                  Selçuklu, Konya
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-rose-500" />
-                <span className="text-gray-600 text-sm">(555) 123-4567</span>
+                <span className="text-gray-600 text-sm">(507) 404-6079</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-rose-500" />
-                <span className="text-gray-600 text-sm">info@bellabeauty.com</span>
+                <span className="text-gray-600 text-sm">nihaltorunn@gmail.com</span>
               </li>
             </ul>
           </div>

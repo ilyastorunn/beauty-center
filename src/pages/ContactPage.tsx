@@ -23,24 +23,28 @@ const contactInfo = [
     title: "Bizi Ziyaret Edin",
     details: ["Esmira Plaza", "Selçuklu, Konya"],
     action: "Yol tarifi alın",
+    link: "https://maps.app.goo.gl/VGrHKqe6zNQgMgYS7"
   },
   {
     icon: <Phone className="h-5 w-5" />,
     title: "Bizi Arayın",
     details: ["(507) 404-6079", "Pazartesi - Cumartesi"],
     action: "Bizi Arayın",
+    link: "tel:+905074046079"
   },
   {
     icon: <Mail className="h-5 w-5" />,
     title: "Bize Email Gönderin",
-    details: ["info@bellabeauty.com", "We reply within 24 hours"],
+    details: ["nihaltorunn@gmail.com", "24 saat içinde dönüş yapıyoruz"],
     action: "Email Gönder",
+    link: "mailto:nihaltorunn@gmail.com"
   },
   {
     icon: <MessageCircle className="h-5 w-5" />,
     title: "WhatsApp",
-    details: ["(507) 404-6079", "Instant messaging"],
+    details: ["(507) 404-6079", "Anında mesajlaşma"],
     action: "Mesaj Gönder",
+    link: "https://wa.me/905074046079"
   },
 ];
 
@@ -55,7 +59,7 @@ const businessHours = [
 ];
 
 const socialLinks = [
-  { icon: <Instagram className="h-5 w-5" />, name: "Instagram", url: "#" },
+  { icon: <Instagram className="h-5 w-5" />, name: "Instagram", url: "https://www.instagram.com/nihalreyyanguzellikestetik/" },
   { icon: <Facebook className="h-5 w-5" />, name: "Facebook", url: "#" },
   { icon: <Twitter className="h-5 w-5" />, name: "Twitter", url: "#" },
 ];
@@ -71,7 +75,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent successfully! We will get back to you soon.");
+    toast.success("Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.");
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
@@ -96,11 +100,10 @@ export default function ContactPage() {
             className="text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Contact Us
+              İletişim
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We'd love to hear from you. Get in touch with us for appointments,
-              questions, or just to say hello.
+              Sizden haber almaktan mutluluk duyarız. Randevu almak, sorularınızı sormak veya sadece merhaba demek için bizimle iletişime geçin.
             </p>
           </motion.div>
         </div>
@@ -135,9 +138,12 @@ export default function ContactPage() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="border-rose-500 text-rose-500 hover:bg-rose-50  hover:text-rose-500"
+                      className="border-rose-500 text-rose-500 hover:bg-rose-50 hover:text-rose-500"
+                      asChild
                     >
-                      {info.action}
+                      <a href={info.link} target="_blank" rel="noopener noreferrer">
+                        {info.action}
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -173,7 +179,7 @@ export default function ContactPage() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          placeholder="Your full name"
+                          placeholder="Adınız ve soyadınız"
                         />
                       </div>
                       <div>
@@ -185,7 +191,7 @@ export default function ContactPage() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          placeholder="your@email.com"
+                          placeholder="ornek@email.com"
                         />
                       </div>
                     </div>
@@ -210,7 +216,7 @@ export default function ContactPage() {
                           required
                           value={formData.subject}
                           onChange={handleChange}
-                          placeholder="What's this about?"
+                          placeholder="Konu başlığı"
                         />
                       </div>
                     </div>
@@ -222,7 +228,7 @@ export default function ContactPage() {
                         required
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Tell us how we can help you..."
+                        placeholder="Size nasıl yardımcı olabiliriz?"
                         rows={6}
                       />
                     </div>
@@ -264,7 +270,7 @@ export default function ContactPage() {
                         </span>
                         <span
                           className={`text-sm ${
-                            schedule.hours === "Closed"
+                            schedule.hours === "Kapalı"
                               ? "text-gray-400"
                               : "text-gray-600"
                           }`}
@@ -285,7 +291,7 @@ export default function ContactPage() {
                 <CardContent>
                   <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878459472!3d40.74844097932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sus!4v1635959542851!5m2!1sen!2sus"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3148.5512279498944!2d32.5015484!3d37.8941765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d0858e3bccb053%3A0x31d06cad012ebcf7!2sEsmira%20Office%20Center!5e0!3m2!1str!2str!4v1751536176290!5m2!1str!2str"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
@@ -301,8 +307,8 @@ export default function ContactPage() {
                         <p className="font-medium text-gray-900">
                           Nihal Reyyan Güzellik
                         </p>
-                        <p className="text-gray-600">123 Beauty Street</p>
-                        <p className="text-gray-600">New York, NY 10001</p>
+                        <p className="text-gray-600">Esmira Plaza</p>
+                        <p className="text-gray-600">Selçuklu, Konya</p>
                       </div>
                     </div>
                   </div>
@@ -312,12 +318,11 @@ export default function ContactPage() {
               {/* Social Media */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Follow Us</CardTitle>
+                  <CardTitle>Bizi Takip Edin</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-gray-600 mt-0">
-                    Stay connected with us for beauty tips, <br /> special offers,
-                    and behind-the-scenes content!
+                    Güzellik ipuçları, özel teklifler ve daha fazlası için <br /> sosyal medya hesaplarımızı takip edin!
                   </p>
                   <div className="flex items-center justify-center gap-4 mt-4">
                     {socialLinks.map((social, index) => (
@@ -328,15 +333,12 @@ export default function ContactPage() {
                         className="border-rose-500 text-rose-500 hover:bg-rose-50"
                         asChild
                       >
-                        <a href={social.url} aria-label={social.name}>
+                        <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
                           {social.icon}
                         </a>
                       </Button>
                     ))}
                   </div>
-                  {/* <p className="text-sm text-gray-600 mt-4">
-                    Stay connected with us for beauty tips, special offers, and behind-the-scenes content!
-                  </p> */}
                 </CardContent>
               </Card>
             </motion.div>

@@ -15,47 +15,39 @@ import {
 const featuredServices = [
   {
     id: 1,
-    name: "Signature Facial",
-    category: "Facial",
-    price: "$120",
-    duration: "60 min",
-    description: "Rejuvenating facial treatment with premium organic products",
+    name: "Lazer Epilasyon",
+    category: "Epilasyon",
+    description: "İstenmeyen tüylerden kalıcı olarak kurtulmak için en son teknoloji lazer epilasyon hizmeti.",
     image:
-      "https://images.pexels.com/photos/3985360/pexels-photo-3985360.jpeg?auto=compress&cs=tinysrgb&w=500",
+      "https://images.pexels.com/photos/3738341/pexels-photo-3738341.jpeg?auto=compress&cs=tinysrgb&w=500",
     icon: <Sparkles className="h-5 w-5" />,
   },
   {
     id: 2,
-    name: "Hair Styling",
-    category: "Hair",
-    price: "$85",
-    duration: "90 min",
-    description: "Professional hair styling with premium products",
+    name: "Cilt Bakımı",
+    category: "Cilt",
+    description: "Cildinizi derinlemesine temizleyen ve canlandıran profesyonel bakım uygulamaları.",
     image:
-      "https://images.pexels.com/photos/3992876/pexels-photo-3992876.jpeg?auto=compress&cs=tinysrgb&w=500",
-    icon: <Scissors className="h-5 w-5" />,
+      "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=500",
+    icon: <Heart className="h-5 w-5" />,
   },
   {
     id: 3,
-    name: "Gel Manicure",
-    category: "Nails",
-    price: "$45",
-    duration: "30 min",
-    description: "Long-lasting gel manicure with nail art options",
+    name: "İspanya Işıltısı",
+    category: "Cilt",
+    description: "Cildinize parlaklık ve canlılık kazandıran özel İspanya ışıltısı uygulaması.",
     image:
-      "https://images.pexels.com/photos/3997991/pexels-photo-3997991.jpeg?auto=compress&cs=tinysrgb&w=500",
+      "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=500",
     icon: <Palette className="h-5 w-5" />,
   },
   {
     id: 4,
-    name: "Relaxing Massage",
-    category: "Massage",
-    price: "$90",
-    duration: "60 min",
-    description: "Therapeutic massage for ultimate relaxation",
+    name: "Kirpik Lifting",
+    category: "Kirpik",
+    description: "Doğal kirpiklerinize hacim ve kıvrım kazandıran kalıcı lifting işlemi.",
     image:
-      "https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=500",
-    icon: <Heart className="h-5 w-5" />,
+      "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=500",
+    icon: <Scissors className="h-5 w-5" />,
   },
 ];
 
@@ -98,7 +90,7 @@ export default function HomePage() {
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/3985327/pexels-photo-3985327.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080"
-            alt="Luxury beauty salon interior"
+            alt="Lüks güzellik salonu iç mekanı"
             className="w-full h-full object-cover object-center"
           />
           {/* Gradient Overlay for better text readability */}
@@ -127,9 +119,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md"
             >
-              Experience luxury beauty treatments with our expert professionals.
-              Book your appointment today and indulge in the ultimate self-care
-              experience.
+              Uzman ekibimizle lüks güzellik uygulamalarını deneyimleyin. Hemen randevunuzu alın ve kendinize özel bakımın tadını çıkarın.
             </motion.p>
 
             <motion.div
@@ -154,7 +144,7 @@ export default function HomePage() {
                 size="lg"
                 className="border-2 border-white/80 text-white hover:bg-white hover:text-gray-900 px-10 py-4 text-lg font-semibold backdrop-blur-sm bg-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               >
-                <Link to="/services">Hizmetleri Görüntüle</Link>
+                <Link to="/services">Hizmetlerimizi Görüntüle</Link>
               </Button>
             </motion.div>
           </div>
@@ -179,10 +169,10 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Popüler Hizmetler
+              Hizmetlerimiz
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              En popüler tedavileri keşfedin
+              En çok tercih edilen uygulamalarımızı keşfedin
             </p>
           </motion.div>
 
@@ -221,16 +211,6 @@ export default function HomePage() {
                     <p className="text-gray-600 text-sm mb-4">
                       {service.description}
                     </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-rose-500 font-semibold">
-                          {service.price}
-                        </span>
-                        <span className="text-gray-400 text-sm">
-                          • {service.duration}
-                        </span>
-                      </div>
-                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -250,7 +230,7 @@ export default function HomePage() {
               size="lg"
               className="border-rose-500 text-rose-500 hover:bg-rose-50 hover:text-rose-600"
             >
-              <Link to="/services">Hizmetleri Görüntüle</Link>
+              <Link to="/services">Tüm Hizmetlerimizi Görüntüle</Link>
             </Button>
           </motion.div>
         </div>
@@ -270,8 +250,7 @@ export default function HomePage() {
               Müşterilerimizin Yorumları
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Hizmetlerimizi deneyimleyen memnun müşterilerimizden referansları
-              okuyun{" "}
+              Hizmetlerimizi deneyimleyen memnun müşterilerimizin yorumlarını okuyun
             </p>
           </motion.div>
 
@@ -328,11 +307,10 @@ export default function HomePage() {
             className="text-center space-y-8"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Ready to Transform Your Look?
+              Güzelliğini Keşfetmeye Hazır mısın?
             </h2>
             <p className="text-lg text-rose-100 max-w-2xl mx-auto">
-              Join thousands of satisfied clients who have discovered their
-              natural beauty with us. Book your appointment today!
+              Binlerce mutlu müşterimiz arasına katılın, doğal güzelliğinizi birlikte ortaya çıkaralım. Hemen randevunuzu alın!
             </p>
             <Button
               asChild
