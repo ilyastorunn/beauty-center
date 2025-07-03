@@ -159,7 +159,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Services */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-page">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -237,7 +237,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-page">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

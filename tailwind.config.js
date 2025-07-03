@@ -67,6 +67,9 @@ export default {
           800: '#9d174d',
           900: '#831843',
         },
+        page: {
+          DEFAULT: '#fdf2f8', // rose-50
+        }
       },
       keyframes: {
         'accordion-down': {

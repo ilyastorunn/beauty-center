@@ -6,7 +6,6 @@ import ServicesPage from '@/pages/ServicesPage';
 
 import AboutPage from '@/pages/AboutPage';
 import ContactPage from '@/pages/ContactPage';
-import WhatsAppButton from '@/components/WhatsAppButton';
 import './App.css';
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </Layout>
-        <WhatsAppButton />
         <Toaster />
       </div>
     </Router>
